@@ -1,0 +1,340 @@
+﻿<UserControl x:Class="BlankAppcx2.Views.KeyComponentsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BlankAppcx2.Views"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+        mc:Ignorable="d"
+        Height="1000" Width="1000">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <TabControl>
+                <TabItem Header="常规">
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock TextWrapping="Wrap" Text="机器人序列号:"/>
+                            <TextBox TextWrapping="Wrap" Text="{Binding Path=person.KeyComponentsAndTableRobotnumber}" Width="120"/>
+                            <Label/>
+                            <Label/>
+                            <TextBlock TextWrapping="Wrap" Text="非标作业号:"/>
+                            <TextBox TextWrapping="Wrap" Text="{Binding Path=person.KeyComponentsAndTableNonStandardNumber}" Width="120"/>
+                        </StackPanel>
+                        <Label/>
+                        <StackPanel Orientation="Horizontal">
+                            <Label/>
+                            <Label/>
+                            <TextBlock TextWrapping="Wrap" Text=" 扫描条码:"/>
+                            <TextBox TextWrapping="Wrap" Text="{Binding Path=person.KeyComponentsAndTableScanTheBarcode}" Width="120"/>
+                            <Label/>
+                            <Label/>
+                            <Label/>
+                            <Label/>
+                            <TextBlock TextWrapping="Wrap" Text=" 作业号:"/>
+                            <TextBox TextWrapping="Wrap" Text="{Binding Path=person.KeyComponentsAndTableJobNumber}" Width="120"/>
+                        </StackPanel>
+                        <Label/>
+                        <StackPanel Orientation="Horizontal">
+                            <Label/>
+                            <Label/>
+                            <Label/>
+                            <Label/>
+                            <Label/>
+                            <Label/>
+                            <TextBlock TextWrapping="Wrap" Text="轴:"/>
+                            <TextBox TextWrapping="Wrap" Text="{Binding Path=person.KeyComponentsAndTableAxle}" Width="120"/>
+                            <Label/>
+                            <Label/>
+                            <Label/>
+                            <Label/>
+                            <Label/>
+                            <TextBlock TextWrapping="Wrap" Text="  型号:"/>
+                            <TextBox TextWrapping="Wrap" Text="{Binding Path=person.KeyComponentsAndTableNumModel}" Width="120"/>
+                        </StackPanel>
+                        <Label/>
+                        <StackPanel Orientation="Horizontal">
+                            <Label/>
+                            <Label/>
+                            <Label/>
+                            <TextBlock TextWrapping="Wrap" Text=" 序列号:"/>
+                            <TextBox TextWrapping="Wrap" Text="{Binding Path=person.KeyComponentsAndTableNumber}" Width="120"/>
+                            <Label/>
+                            <Label/>
+                            <Label/>
+                            <Label/>
+                            <Label/>
+                            <Label/>
+                            <TextBlock TextWrapping="Wrap" Text="描述:"/>
+                            <TextBox TextWrapping="Wrap" Text="{Binding Path=person.KeyComponentsAndTableDescribe}" Width="120"/>
+                        </StackPanel>
+                        <Label/>
+                        <StackPanel Orientation="Horizontal">
+                            <Label/>
+                            <Label/>
+                            <TextBlock TextWrapping="Wrap" Text=" 物料编码:"/>
+                            <TextBox TextWrapping="Wrap" Text="{Binding Path=person.KeyComponentsAndTableMaterialCode}" Width="120"/>
+                            <Label/>
+                            <Label/>
+                            <Label/>
+                            <TextBlock TextWrapping="Wrap" Text=" 物料描述:"/>
+                            <TextBox TextWrapping="Wrap" Text="{Binding Path=person.KeyComponentsAndTableMaterialDescription}" Width="120"/>
+                        </StackPanel>
+                        <Label/>
+                        <StackPanel Orientation="Horizontal">
+                            <Label/>
+                            <Label/>
+                            <Label/>
+                            <TextBlock TextWrapping="Wrap" Text=" 装配工:"/>
+                            <TextBox TextWrapping="Wrap" Text="{Binding Path=person.KeyComponentsAndTableAssembler}" Width="120"/>
+                            <Label/>
+                            <Label/>
+                            <Label/>
+                            <Label/>
+                            <Label/>
+                            <Label/>
+
+                        </StackPanel>
+                        <Label/>
+                        <Label/>
+                        <StackPanel Orientation="Horizontal">
+                            <Label/>
+                            <Label/>
+                            <Button Command="{Binding Path=AddCmd}" Content="采集信息"/>
+    
+                        </StackPanel>
+                        <Label/>
+                        <Label/>
+                        <StackPanel Orientation="Vertical">
+                            <DataGrid ItemsSource="{Binding People}">
+                                <DataGrid.Columns>
+                                    <DataGridTemplateColumn Header="操作" Width="50">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+                                                    <Button Content="删除" Click="Button_Click3" Tag="{Binding ID}"/>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </StackPanel>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="电机">
+                    <Grid Background="#FFE5E5E5">
+                        <StackPanel Orientation="Vertical">
+                            <Label/>
+                            <Label/>
+                            <StackPanel Orientation="Horizontal">
+                                <Label/>
+                                <TextBlock TextWrapping="Wrap" Text="机器人序列号:"/>
+                                <TextBox TextWrapping="Wrap" Text="{Binding Path=person2.ElectricalMachineryTableRobotnumber}" Width="120"/>
+                                <Label/>
+                                <Label/>
+                                <TextBlock TextWrapping="Wrap" Text="作业号:"/>
+                                <TextBox TextWrapping="Wrap" Text="{Binding Path=person2.ElectricalMachineryTableJobNumber}" Width="120"/>
+                            </StackPanel>
+                            <Label/>
+                            <StackPanel Orientation="Horizontal">
+                                <Label/>
+                                <Label/>
+                                <Label/>
+                                <Label/>
+                                <Label/>
+                                <Label/>
+                                <Label/>
+                                <TextBlock TextWrapping="Wrap" Text="轴:"/>
+                                <TextBox TextWrapping="Wrap" Text="{Binding Path=person2.ElectricalMachineryTableAxle}" Width="120"/>
+                                <Label/>
+                                <Label/>
+                                <Label/>
+                                <TextBlock TextWrapping="Wrap" Text="型号:"/>
+                                <TextBox TextWrapping="Wrap" Text="{Binding Path=person2.ElectricalMachineryTableNumModel}" Width="120"/>
+                            </StackPanel>
+                            <Label/>
+                            <StackPanel Orientation="Horizontal">
+                                <Label/>
+                                <Label/>
+                                <Label/>
+                                <TextBlock TextWrapping="Wrap" Text=" 扫描条码:"/>
+                                <TextBox TextWrapping="Wrap" Text="{Binding Path=person2.ElectricalMachineryTableScanTheBarcode}" Width="120"/>
+                                <Label/>
+                                <Label/>
+                                <Label/>
+                                <TextBlock TextWrapping="Wrap" Text="描述:"/>
+                                <TextBox TextWrapping="Wrap" Text="{Binding Path=person2.ElectricalMachineryTableDescribe}" Width="120"/>
+                            </StackPanel>
+                            <Label/>
+                            <StackPanel Orientation="Horizontal">
+                                <Label/>
+                                <Label/>
+                                <Label/>
+                                <TextBlock TextWrapping="Wrap" Text=" 物料编码:"/>
+                                <TextBox TextWrapping="Wrap" Text="{Binding Path=person2.ElectricalMachineryTableMaterialCode}" Width="120"/>
+                                <Label/>
+                                <TextBlock TextWrapping="Wrap" Text="物料描述:"/>
+                                <TextBox TextWrapping="Wrap" Text="{Binding Path=person2.ElectricalMachineryTableMaterialDescription}" Width="120"/>
+                            </StackPanel>
+                            <Label/>
+                            <StackPanel Orientation="Horizontal">
+                                <Label/>
+                                <Label/>
+                                <Label/>
+                                <Label/>
+                                <TextBlock TextWrapping="Wrap" Text="  序列号:"/>
+                                <TextBox TextWrapping="Wrap" Text="{Binding Path=person2.ElectricalMachineryTableSerialNumber}" Width="120"/>
+                                <Label/>
+                                <Label/>
+                                <TextBlock TextWrapping="Wrap" Text="装配工:"/>
+                                <TextBox TextWrapping="Wrap" Text="{Binding Path=person2.ElectricalMachineryTableAssembler}" Width="120"/>
+                            </StackPanel>
+                            <Label/>
+                            <Label/>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Margin="200,5,5,10" Content="采集信息" Command="{Binding AddCmd2}" Height="20" Width="56"/>
+                            </StackPanel>
+                            <Label/>
+                            <Label/>
+                            <StackPanel Orientation="Vertical">
+                                <DataGrid ItemsSource="{Binding People2}">
+                                    <DataGrid.Columns>
+                                        <DataGridTemplateColumn Header="操作" Width="50">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+                                                        <Button Content="删除" Click="Button_Click2"  Tag="{Binding ID}"/>
+                                                    </StackPanel>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </StackPanel>
+                        </StackPanel>
+
+                    </Grid>
+                </TabItem>
+                <TabItem Header="齿轮箱">
+                    <Grid Background="#FFE5E5E5">
+                        <StackPanel Orientation="Vertical">
+                            <Label/>
+                            <Label/>
+                            <StackPanel Orientation="Horizontal">
+                                <Label/>
+                                <TextBlock TextWrapping="Wrap" Text="机器人序列号:"/>
+                                <TextBox TextWrapping="Wrap" Text="{Binding Path=person3.GearCaseTableRobotnumber}" Width="120"/>
+                                <Label/>
+                                <Label/>
+                                <TextBlock TextWrapping="Wrap" Text="作业号:"/>
+                                <TextBox TextWrapping="Wrap" Text="{Binding Path=person3.GearCaseTableJobNumber}" Width="120"/>
+                            </StackPanel>
+                            <Label/>
+                            <StackPanel Orientation="Horizontal">
+                                <Label/>
+                                <Label/>
+                                <Label/>
+                                <Label/>
+                                <Label/>
+                                <Label/>
+                                <Label/>
+                                <TextBlock TextWrapping="Wrap" Text="轴:"/>
+                                <TextBox TextWrapping="Wrap" Text="{Binding Path=person3.GearCaseTableAxle}" Width="120"/>
+                                <Label/>
+                                <Label/>
+                                <Label/>
+                                <TextBlock TextWrapping="Wrap" Text="型号:"/>
+                                <TextBox TextWrapping="Wrap" Text="{Binding Path=person3.GearCaseTableNumModel}" Width="120"/>
+                            </StackPanel>
+                            <Label/>
+                            <StackPanel Orientation="Horizontal">
+                                <Label/>
+                                <Label/>
+                                <Label/>
+                                <TextBlock TextWrapping="Wrap" Text=" 扫描条码:"/>
+                                <TextBox TextWrapping="Wrap" Text="{Binding Path=person3.GearCaseTableScanTheBarcode}" Width="120"/>
+                                <Label/>
+                                <Label/>
+                                <Label/>
+                                <TextBlock TextWrapping="Wrap" Text="描述:"/>
+                                <TextBox TextWrapping="Wrap" Text="{Binding Path=person3.GearCaseTableDescribe}" Width="120"/>
+                            </StackPanel>
+                            <Label/>
+                            <StackPanel Orientation="Horizontal">
+                                <Label/>
+                                <Label/>
+                                <Label/>
+                                <TextBlock TextWrapping="Wrap" Text=" 物料编码:"/>
+                                <TextBox TextWrapping="Wrap" Text="{Binding Path=person3.GearCaseTableMaterialCode}" Width="120"/>
+                                <Label/>
+                                <TextBlock TextWrapping="Wrap" Text="物料描述:"/>
+                                <TextBox TextWrapping="Wrap" Text="{Binding Path=person3.GearCaseTableMaterialDescription}" Width="120"/>
+                            </StackPanel>
+                            <Label/>
+                            <StackPanel Orientation="Horizontal">
+                                <Label/>
+                                <Label/>
+                                <Label/>
+                                <Label/>
+                                <TextBlock TextWrapping="Wrap" Text="  序列号:"/>
+                                <TextBox TextWrapping="Wrap" Text="{Binding Path=person3.GearCaseTableSerialNumber}" Width="120"/>
+                                <Label/>
+                                <Label/>
+                                <TextBlock TextWrapping="Wrap" Text="装配工:"/>
+                                <TextBox TextWrapping="Wrap" Text="{Binding Path=person3.GearCaseTableWorker}" Width="120"/>
+                            </StackPanel>
+                            <Label/>
+                            <StackPanel Orientation="Horizontal">
+                                <Label/>
+                                <Label/>
+                                <Label/>
+                                <Label/>
+                                <Label/>
+                                <TextBlock TextWrapping="Wrap" Text="  结果:"/>
+                                <TextBox TextWrapping="Wrap" Text="{Binding Path=person2.GearCaseTableUploadResults}" Width="120"/>
+
+                                <TextBlock TextWrapping="Wrap" Text="注油标准值:"/>
+                                <TextBox TextWrapping="Wrap" Text="{Binding Path=person3.GearCaseTableFillingStandard}" Width="120"/>
+                            </StackPanel>
+                            <Label/>
+                            <StackPanel Orientation="Horizontal">
+
+                                <Label/>
+                                <Label/>
+                                <TextBlock TextWrapping="Wrap" Text="注油实际值:"/>
+                                <TextBox TextWrapping="Wrap" Text="{Binding Path=person3.GearCaseTableActualValueOfOilInjection}" Width="120"/>
+                                <Label/>
+                                <Label/>
+                                <TextBlock TextWrapping="Wrap" Text="偏差值:"/>
+                                <TextBox TextWrapping="Wrap" Text="{Binding Path=person3.GearCaseTableDeviationValue}" Width="120"/>
+                            </StackPanel>
+                            <Label/>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Margin="200,5,5,10" Content="采集信息" Command="{Binding AddCmd3}" Height="20" Width="56"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Vertical">
+                                <DataGrid ItemsSource="{Binding People3}">
+                                    <DataGrid.Columns>
+                                        <DataGridTemplateColumn Header="操作" Width="50">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+                                                        <Button Content="删除" Click="Button_Click1" Tag="{Binding ID}"/>
+                                                    </StackPanel>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </StackPanel>
+                            
+                        </StackPanel>
+
+                    </Grid>
+                    
+                </TabItem>
+            </TabControl>
+        </StackPanel>
+    </Grid>
+</UserControl>

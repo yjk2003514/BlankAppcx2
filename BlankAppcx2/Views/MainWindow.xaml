@@ -1,0 +1,89 @@
+﻿<UserControl
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prism="http://prismlibrary.com/"
+        xmlns:av="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="av" x:Class="BlankAppcx2.Views.MainWindow"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        Height="1000" Width="1000" >
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="删除" Background="#DA4453"   Width="70" Height="25"/>
+                <TextBlock Margin="80,15,5,10" Text="物料编码:"/>
+                <TextBox TextWrapping="Wrap" Margin="0,15,5,10" Text="{Binding Path=personQuery.MaterialAllocationTableCoding}" Width="120" Height="20"/>
+                <TextBlock Margin="0,15,5,10" Text="页签:"/>
+                <TextBox TextWrapping="Wrap" Margin="0,15,5,10" Text="{Binding Path=personQuery.MaterialAllocationTableTab}" Width="120" Height="20"/>
+                <Button Content="查询" Background="#3BAFDA" Width="70" Height="25" Command="{Binding Path=QueryCmd}"/>
+            </StackPanel>
+            <Label/>
+            <Label/>
+            <StackPanel Orientation="Horizontal">
+                <DataGrid  ItemsSource="{Binding People}"/>
+            </StackPanel>
+            <Label/>
+            <Label/>
+            <Label/>
+            <Label/>
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="描述: "/>
+                    <Label/>
+                    <Label/>
+                    <Label/>
+                    <TextBox Width="100"   Text="{Binding  Path=person.MaterialAllocationTableDescribe}" />
+                </StackPanel>
+                <Label/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="物料编码:"/>
+                    <Label/>
+                    <ComboBox Width="120" Text="{Binding  Path=person.MaterialAllocationTableCoding}">
+                        <ComboBoxItem IsSelected="True" Content="M001"></ComboBoxItem>
+                        <ComboBoxItem Content="M002"></ComboBoxItem>
+                        <ComboBoxItem Content="M003"></ComboBoxItem>
+                        <ComboBoxItem Content="M004"></ComboBoxItem>
+                        <ComboBoxItem Content="M005"></ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+                <Label/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="页签: "/>
+                    <Label/>
+                    <Label/>
+                    <Label/>
+                    <ComboBox Width="120" Text="{Binding Path=person.MaterialAllocationTableTab}">
+                        <ComboBoxItem IsSelected="True" Content="齿轮箱"></ComboBoxItem>
+                            <ComboBoxItem Content="电机"></ComboBoxItem>
+                            <ComboBoxItem Content="机器臂"></ComboBoxItem>
+                            <ComboBoxItem Content="拉力机"></ComboBoxItem>
+                            <ComboBoxItem Content="搅拌"></ComboBoxItem>
+                        </ComboBox>
+                </StackPanel>
+                <Label/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="轴:  "/>
+                    <Label/>
+                    <Label/>
+                    <Label/>
+                    <Label/>
+                    <TextBox Width="100" Text="{Binding Path=person.MaterialAllocationTableAxle}" />
+                </StackPanel>
+                <Label/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="标准注油值:"/>
+                    <TextBox Width="100" Text="{Binding Path=person.MaterialAllocationTableStandard}" />
+                </StackPanel>
+                <Label/>
+                <StackPanel Orientation="Horizontal">
+                <TextBlock Text="注油偏差值:"/>
+                    <TextBox Width="100" Text="{Binding Path=person.MaterialAllocationTableDeviation}" />
+                </StackPanel>
+                <Label/>
+                <Label/>
+                <Label/>
+                <StackPanel Orientation="Vertical">
+                    <Button Content="新增" Command="{Binding Path=AddCmd}"  Width="80" Height="30"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>
